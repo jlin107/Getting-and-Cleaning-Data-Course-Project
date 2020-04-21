@@ -25,7 +25,7 @@ feature_names <- feature_names[[2]]
 colnames(merged_data) <- c("subject", "activity", feature_names)
 
 #### 2. Extract mean and standard deviation data. ----
-merged_data <- merged_data[,c(1:2,grep("mean|std", colnames(merged_data)))]
+merged_data <- merged_data[,c(1:2,grep("mean\\(|std\\(", colnames(merged_data)))]
 
 #### 3. Label activities. ----
 activity_names <- read.table("UCI HAR Dataset/activity_labels.txt",
